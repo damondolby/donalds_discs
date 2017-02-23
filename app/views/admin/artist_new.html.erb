@@ -1,0 +1,16 @@
+<h2>New Artist</h2>
+<%= error_messages_for 'artist' %>
+<p>
+	Enter a new artist and click "Enter Artist". The new artist
+	should appear in the drop down list on the 
+	<%= link_to 'new/edit record page', :action => 'new' %>.
+</p>
+<% form_tag :action => 'create_artist' do %>
+<p>
+	<label for="record_name">Artist Name: </label>
+	<%= text_field 'artist', 'name'%>
+</p>
+<p>
+	<%= submit_tag "Enter Artist" %>
+</p>
+  <% end %>

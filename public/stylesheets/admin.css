@@ -1,0 +1,186 @@
+/* css Zen Garden default style - 'Tranquille' by Dave Shea - http://www.mezzoblue.com/ */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+/* All associated graphics copyright 2003, Dave Shea */
+/* Added: May 7th, 2003 */
+
+
+/* IMPORTANT */
+/* This design is not a template. You may not reproduce it elsewhere without the 
+   designer's written permission. However, feel free to study the CSS and use 
+   techniques you learn from it elsewhere. */
+
+
+/* The Zen Garden default was the first I put together, and almost didn't make the cut. I briefly flirted with using
+    'Salmon Cream Cheese' as the main style for the Garden, but switched back to this one before launch.
+
+    All graphics in this design were illustrated by me in Photoshop. Google Image Search provided inspiration for
+    some of the elements. I did a bit of research on Kanji to come up with the characters on the top left. Anyone who
+    can read that will most likely tell you it makes no sense, but the best I could do was putting together the
+    characters for 'beginning' 'complete' and 'skill' to roughly say something like 'we're breaking fresh ground.'
+
+    It's a stretch. */
+
+
+/* basic elements */
+html {
+	margin: 0px;
+	padding: 0px;
+	}
+body { 
+	font: 9pt/17pt georgia; 
+	color: #555753; 
+	background: #fff url(/001/zen-bg.jpg) no-repeat top left; 
+	/*background: #fff url(/001/blossoms.jpg) no-repeat right bottom; */
+	margin: 0px; 
+	padding: 0px;
+	min-height: 100%;
+	width: 800px;
+	
+	
+	}
+p { 
+	font: 9pt/17pt georgia; 
+	margin-top: 0px; 
+	text-align: justify;
+	}
+h1 { 
+	font:  bold 22px "Times New Roman";
+	margin: 0px 0px 10px 20px;
+
+	}
+h2 { 
+	font: normal 12pt georgia; 
+	letter-spacing: 1px; 
+	margin-bottom: 20px; 
+	color: blue;
+	margin-left: 220px;
+	}
+h3 { 
+	font: italic normal 12pt georgia; 
+	letter-spacing: 1px; 
+	margin-bottom: 0px; 
+	color: #7D775C;
+	}
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #4444FF;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #4444FF;
+	}
+a:hover, a:active { 
+	text-decoration: underline; 
+	color: #9685BA;
+	}
+	
+table{
+	border-collapse: collapse;
+	border-spacing: 2px 2px;
+	border-width: 0px;
+	border-color: #A9A9A9;
+	border-style: groove;
+	margin: 0px 0px 0px 30px;
+
+}
+
+td{
+	padding: 4px 10px 4px 10px;
+	border-spacing: 2px;
+	border-width: 1px;
+	border-color: #A9A9A9;
+	border-style: inset;;
+	background-color: #F0FFFF;
+	
+}
+
+th{
+	padding: 10px;
+	border-spacing: 10px;
+	border-width: 1px;
+	border-color: white;
+	border-style: inset;
+	background-color: #A9A9A9;
+	color: white;
+	
+}
+
+input{
+	color: #000000;
+	background-color: #ffeeee;
+}
+
+.menu{
+	 margin: 0px 20px 0px 0px;
+	 padding: 2px 2px 2px 2px;
+	 background-color: #22FFFF;
+}
+
+
+.menu_ext a{
+	 margin: 0px 20px 0px 0px;
+	 padding: 2px 2px 2px 2px;
+	 background-color: #4444FF;
+	 color: #22FFFF;
+}
+
+.submenu{
+	 margin: 0px 20px 0px 0px;
+	 padding: 2px 2px 2px 2px;
+}
+
+.submenuRec{
+	font-weight: bolder;
+	font-style: italic;
+}	
+
+.songList
+{
+	float: left; 
+	margin-left:80px;	
+	background-color: #F0FFFF;	
+}
+
+.songListTitle
+{
+	background-color: #A9A9A9;
+	color: white;
+	text-align: center;
+	padding: 10px 42px 10px 42px;
+	font-weight: bolder;
+}
+
+.songNewTitle
+{
+	background-color: #A9A9A9;
+	color: white;
+	text-align: center;
+	padding: 0px 157px 10px 42px;
+	font-weight: bolder;
+}
+
+.songNext a
+{
+	margin-left: 10px;
+	color: red;
+}
+
+.songPrev a
+{
+	margin-right: 10px; 
+	color: green;
+	
+}
+
+/*.songPrev a
+{
+	margin-right: 20px; 
+	color: green;
+	
+}
+
+.songPrev a:visited { 
+	color: green;
+	}*/

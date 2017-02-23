@@ -1,0 +1,27 @@
+<h2>Open To Offers</h2>
+<p>The records below do not have set prices. They are all open to offers.</p>
+
+<% if @records.length > 0 %>
+	<% form_for :selections, :url => { :action => 'add_offers'} do |form2| %>
+		<div style="width: 550px;">
+			<table width="550" class="Records">
+				<tr>
+					<th>Record</th>
+					<th>Artist</th>
+					<th>Add</th>
+				</tr>
+				<% for record in @records %>
+					  <tr>
+						<td><%= link_to record.name, { :action => "details", :id => record.id }, :popup => true %></td>
+						<td><%=record.artist.name %></td>
+						<td><%= form2.check_box 'item_'+record.id.to_s, {"checked", is_in_session? (record.id), "disabled", is_in_session? (record.id)}, record.id.to_s, "off" %></td>
+					  </tr>
+				<% end %>
+			</table>
+			<p style="margin-top:20px; margin-left:75px; text-align:right;"><%= submit_tag "Add To Offer List"  %><p>
+		</div>		
+	<% end %>
+<% end %>
+<p><%=@noRecordsMsg%></p>
+
+

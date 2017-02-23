@@ -1,0 +1,40 @@
+<h2>List of all records</h2>
+<p>The following table lists all the records that have been entered 
+into the database so far.<br>
+To add a new record use the menu at the top or click <%= link_to 'here', :action => 'new' %></p>
+
+<% form_for :record do |form| %>
+	<div style="margin: 20px 20px 20px 20px">
+		Search criteria:<br />
+		
+		Artist: <%=form.select(:artist_id, Artist.getArtistsDropDown)%>	
+		Label: <%=form.select(:label_id, Label.getLabelDropDown)%>	
+		<%= submit_tag "Select" %>
+	</div>
+<% end %>	
+<table>
+<tr>
+	<th>Name</th>
+	<th>Artist</th>
+	<th>Recorded</th>
+	<th>Status</th>
+	<th colspan="4"></th>
+</tr>
+	<% for record in @records %>
+	<tr>
+		<td><%=record.name %></td>
+		<td><%=record.artist.name %></td>
+		<td><%=record.isRecorded_display %></td>
+		<td><%=record.status.name %></td>
+		<td><%= link_to 'Show', :action => 'show', :record_id => record %></td>
+		<td><%= link_to 'Edit', :action => 'new', :record_id => record %></td>
+		<td><%= link_to 'Songs', :action => 'songs', :record_id => record %></td>
+		<td><%= link_to 'Delete', { :action => 'destroy', :record_id => record }, :confirm => 'Are you sure?', :method => :post %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<td colspan="6">
+			<%= pagination_links(@record_pages)%> 		
+		</td>
+	</tr>
+</table>

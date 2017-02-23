@@ -1,0 +1,28 @@
+<h2>Add/Delete songs</h2>
+<p>Edit and Delete the existing songs on the left. Add a new song
+on the right
+<br>Click here to see song details
+<br>Click here edit song details</p>
+<% form_tag :action => 'songAction', :record_id => @record do %>
+	<div style="float:left;">
+		<table>
+			<th colspan="2">
+				Current Songs:
+			</th>
+			<%for @song in @songs%>
+			<tr>
+				<td><%= text_field 'song[]', 'name'%></td>
+				<td><%= link_to 'Delete', { :action => 'song_delete', :songid => @song, :recordID => @record }, :confirm => 'Are you sure?', :method => :post %></td>
+			</tr>
+		   <% end %>
+		   <tr>
+		   		<td colspan="2"><%= submit_tag "Submit All Song Changes" %></td>
+		   </tr>
+	   	</table>
+	</div>
+	<div style="float:left; margin-left:20px;">
+		<span class="songNewTitle">Add Song</span><br />
+		 <%= text_field 'songNew', 'name'%><br />
+		<%= submit_tag "Add New Song" %>
+	</div>	  
+<% end %>

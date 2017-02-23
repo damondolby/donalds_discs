@@ -1,0 +1,204 @@
+body
+{
+	margin: 0px;
+	font: bold 12px arial;
+	background-color: #FFF9E0;
+}
+
+p
+{
+	font: normal 11px arial;
+}
+
+select
+{
+	font-size: 10.5px;
+	width: 175px;
+}
+
+input
+{
+	font-size: 10.5px;
+}
+
+h2
+{
+	color: #716B4B;	
+}
+
+
+#Border
+{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Border #Logo
+{
+	width: 800px;
+	height: 64px;
+	background: url("/images/banner.png") no-repeat;
+	float: left;
+}
+
+#Border #Menu
+{
+	width: 800px;
+	height: 24px;
+	background: url("/images/menu_bk.png") no-repeat;
+	float: left;
+}
+
+#Border #Menu a
+{
+	font-size: 14px;
+	color: #EEE29E;
+	background-color: #716B4B;
+	text-decoration: none;
+	height: 19px;
+	/*vertical-align: middle;*/
+	float: left;
+	padding: 2px 8px 0px 8px;
+	margin: 0px 0px 0px 2px;
+	
+}
+
+#Border #Menu a:hover
+{
+	color: Red;
+	color: #716B4B;
+	background-color: #EEE29E;
+	border-left: groove 2px #716B4B;
+	border-right: groove 2px #716B4B;
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+
+#Border #Left
+{
+	margin-top: 10px;
+	padding: 3px;
+	border: solid 0px #716B4B;
+	float: left;
+	height: 600px;
+	width: 585px;
+	
+}
+
+#Border #Left h2
+{
+	font: bold 20px arial;
+	text-align: center;
+}
+
+#Border #Right
+{
+	margin-top: 10px;
+	padding: 3px;
+	border: solid 2px #716B4B;
+	float: right;
+	width: 185px;
+	height: 600px;
+	background-color: #EEE29E;
+}
+
+#Border #Right h2
+{
+	font: bold 16px arial;
+	text-align: center;
+}
+
+#Border #Left table.Records
+{
+		background: #EEE29E;
+		border-collapse: collapse;
+}
+
+#Border #Left table.Records th
+{
+	color: #EEE29E;
+	background: #716B4B;
+	padding: 5px;
+	border: solid 1px #aaa;
+	font: bold 10px arial;
+}
+
+#Border #Left table.Records th a
+{
+	text-decoration: none;
+	color: #EEE29E;	
+}
+
+#Border #Left table.Records th a:hover
+{
+	text-decoration: underline;
+}
+
+#Border #Left table.Records td
+{
+	border: solid 1px #aaa;
+	padding: 3px;
+	font: normal 10px arial;
+	
+}
+
+#Border #Left table.Records td a
+{
+	text-decoration: none;
+	color: #716B4B;	
+	font-weight: bold;
+}
+
+#Border #Left table.Records td a:hover
+{
+	text-decoration: underline;
+}
+
+.atoz_letters
+{
+	margin: 20px;	
+}
+
+.atoz_letters a
+{
+	text-decoration: none;
+	color: #716B4B;	
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.atoz_letters a:hover
+{
+	text-decoration: underline;
+}
+
+.searchcriteria
+{
+	margin: 20px;
+}
+
+.personal_details
+{
+	margin: 20px;
+	width: 400px;
+}
+
+.personal_details label
+{
+	margin-right: 50px;
+	width: 55px;
+	display: inline-block;
+}
+
+.personal_details input
+{
+	width: 250px;
+}
+
+.personal_details input.button
+{
+	width: 100px;
+	margin: 0px;	
+	}

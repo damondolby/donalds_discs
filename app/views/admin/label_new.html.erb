@@ -1,0 +1,16 @@
+<h2>New Label</h2>
+<%= error_messages_for 'label' %>
+<p>
+	Enter a new label and click "Enter Label". The new label
+	should appear in the drop down list on the 
+	<%= link_to 'new/edit record page', :action => 'new' %>.
+</p>
+<% form_tag :action => 'create_label' do %>
+<p>
+	<label for="record_name">Label Name</label>
+	<%= text_field 'label', 'name'%>
+</p>
+<p>
+  <%= submit_tag "Enter Label" %>
+</p>
+<% end %>

@@ -1,0 +1,11 @@
+<h2>A-Z Search</h2>
+<p>Please click A,B,C... or Z to see the records starting with that letter.</p>
+<div class="atoz_letters">
+	<% 'a'.upto('z') do |n| %>
+		<%= link_to n.capitalize, :action => 'atoz', :id => n %>&nbsp;
+	<% end%>
+</div>
+
+<%=render(:partial => "record_items")%>
+
+

@@ -1,0 +1,37 @@
+<h2>My Records</h2>
+<p>Below are the records you are interested in. Remove any you no longer want.</p>
+<p>When you're happy with the list, fill in your details below along with and offer (i.e. the amount you're prepared to pay).</p>
+
+<% if @selectedRecords.length > 0 %>
+	<div>
+		<div>
+			<table width="300" class="Records" style="margin: 20px;">
+				<tr>
+					<th>Record Name</th>
+					<th>Remove</th>
+				</tr>
+				<% for record in @selectedRecords %>
+					<tr>
+						<td><%=get_record(record).name %></td>
+						<td><%= link_to 'Remove Record', :action => 'remove_record', :rec => record %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	
+
+		<% form_for :details, :url => { :action => 'user_details'} do |form2| %>
+			<div class="personal_details">
+				Fill in details if you like to buy these:<br/>
+				
+				<p><label>First Name</label><%= text_field 'user', 'first_name'%></p>
+				<p><label>Last Name</label><%= text_field 'user', 'last_name'%></p>
+				<p><label>Email</label><%= text_field 'user', 'email'%></p>
+				<p><label>Offer &pound;</label><%= text_field 'user', 'offer'%></p>
+				<p style="text-align: center;"><input type="button" value="Send Offer..." class="button" /></p>
+				
+			</div>
+		<% end %>
+	</div>
+<% end %>
+<p><%=@noRecordsMsg%></p>

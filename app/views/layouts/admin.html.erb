@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Donald's Discs - Administration Site</title>
+  <%= stylesheet_link_tag 'admin' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+<h1>Donald's Discs - Admin Site</h1>
+<div style="margin: 0px 0px 10px 50px;">
+	<span class="menu_ext">
+		<%= link_to 'Public', :controller => 'record', :action => 'list' %>
+	</span>
+	<span class="menu">
+		<%= link_to 'List All', :action => 'list' %>
+	</span>
+	<span class="menu">
+		<%= link_to 'New Record', :action => 'new' %>
+	</span>
+	<span class="menu">
+		<%= link_to 'New Artist', :action => 'artist_new' %>
+	</span>
+	<span class="menu">
+		<%= link_to 'New Label', :action => 'label_new' %>
+	</span>
+	<span class="menu_ext">
+		<%= link_to 'Log Out', :controller => 'admin', :action => 'logout' %>
+	</span>
+</div>
+<hr style=" margin: 0px 0px 0px 20px">
+<%if @record and @record.id%>
+	<div style="text-align: right; background-color: #ffeeee; margin-left:20px;">
+		<span class="submenu submenuRec">
+			<span style="font-weight: normal;">Current Record:</span> <%= @record.name%>		
+		</span>
+		<span class="submenu">
+			<%= link_to 'Details', :action => 'show', :record_id => @record %>
+		</span>
+		<span class="submenu">
+			<%= link_to 'Edit', :action => 'new', :record_id => @record %>
+		</span>
+		<span class="submenu">
+			<%= link_to 'Songs', :action => 'songs', :record_id => @record %>
+		</span>
+		<hr style="text-align:right; margin: 0px 0px 0px 0px">
+	</div>
+	<div style="text-align:right;">
+		<span class="songPrev" ><%= link_to ('<<< Previous Record', :action => 'new', :record_id => @record.previous_record.id) if @record.previous_record%></span> 	
+		<span class="songNext"><%= link_to ('Next Record>>>', :action => 'new', :record_id => @record.next_record.id) if @record.next_record%></span> 
+	</div>	
+<%end%>
+<div style="margin: 20px 0px 0px 30px;">
+	<p style="color: green"><%= flash[:notice] %></p>
+	<%= yield  %>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Logfile created on Thu Jul 23 22:52:40 +0100 2009
+
+Processing RecordController#list (for 92.234.38.209 at 2009-07-23 22:52:40) [GET]
+  Session ID: 318f99772b8025816f8f84d7615690b9
+  Parameters: {"action"=>"list", "controller"=>"record"}
+  [4;36;1mSQL (0.000080)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000046)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mRecord Columns (0.000757)[0m   [0;1mSHOW FIELDS FROM `records`[0m
+  [4;35;1mRecord Load (0.000128)[0m   [0mSELECT * FROM `records` WHERE (status_id = 1 and artist_id = 0 and label_id = 0) ORDER BY name ASC[0m
+Rendering template within layouts/record
+Rendering record/list
+  [4;36;1mArtist Load (0.000951)[0m   [0;1mSELECT * FROM `artists` ORDER BY name[0m
+  [4;35;1mArtist Columns (0.000235)[0m   [0mSHOW FIELDS FROM `artists`[0m
+  [4;36;1mLabel Load (0.000413)[0m   [0;1mSELECT * FROM `labels` ORDER BY name[0m
+  [4;35;1mLabel Columns (0.000200)[0m   [0mSHOW FIELDS FROM `labels`[0m
+Rendered record/_record_items (0.00001)
+Completed in 0.03016 (33 reqs/sec) | Rendering: 0.01870 (61%) | DB: 0.00281 (9%) | 200 OK [http://donald09.choitowers.co.uk/record/list]
+
+
+Processing ApplicationController#index (for 92.234.38.209 at 2009-07-23 22:52:49) [GET]
+  Session ID: BAh7CDoWcmVjb3JkX2NvbmRpdGlvbnNbByJJc3RhdHVzX2lkID0gOnN0YXR1
+c19pZCBhbmQgYXJ0aXN0X2lkID0gOmFydGlzdCBhbmQgbGFiZWxfaWQgPSA6
+bGFiZWx7CDoOc3RhdHVzX2lkaQY6C2FydGlzdGkAOgpsYWJlbGkAOgxjc3Jm
+X2lkIiU2NzE0ZDAwMDNjOWExOWE0MTViOGM4OTZiMzBmMGMzZSIKZmxhc2hJ
+QzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVz
+ZWR7AA==--25e5c4b44db8f0e0fba0070a0d7922ae2b03d782
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+
+Rendering /home/choitowe/public_html/donalds_discs09/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)

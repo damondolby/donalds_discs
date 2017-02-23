@@ -1,0 +1,33 @@
+<h2>Artist or Label Search</h2>
+<p>Search for an artist or label and click Find Records. 
+Click Find Records to display everything available</p>
+
+<% form_for :record do |form| %>
+	<div class="searchcriteria">		
+		<%=form.select(:artist_id, Artist.getArtistsDropDown)%><br />	
+		<%=form.select(:label_id, Label.getLabelDropDown)%>
+		<div style="margin-left: 10px; display: inline; "><%= submit_tag "Find Records", :onclick => "return SubmitClick()"  %></div>
+		
+	</div>
+<% end %>
+<%=render(:partial => "record_items")%>
+<script language="JavaScript">
+ function SubmitClick()
+ {
+ 	return true;
+ 	//alert($('record_artist_id').show());
+	//alert(document.getElementById('record_artist_id').value);
+	var artist = document.getElementById('record_artist_id').value;
+	var label = document.getElementById('record_label_id').value;
+	if (artist == -1 && label == -1)
+	{
+		alert("Please select an artist or a label");
+		return false;
+	}	
+ }
+ 
+ function Test()
+ {
+ 	alert("checkbox test");
+ }
+</script>

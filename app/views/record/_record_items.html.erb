@@ -1,0 +1,47 @@
+<% if @records.length > 0 %>
+	<% form_for :selections, :url => { :action => 'add_interesting_records'} do |form2| %>
+		<div style="width: 550px;" id="RecordsTable">
+			<table width="550" class="Records">
+				<tr>
+					<th>
+						<%= link_to_remote 'Record',
+							:url => {:action => "_record_items", :sort => "name", :only_path => false},
+							:update => 'RecordsTable',
+							:before => "Element.show('spinner')",
+							:complete => "Element.hide('spinner')"%>						
+					</th>
+					<th>
+						<%= link_to_remote 'Artist',
+							:url => {:action => "_record_items", :sort => "artist.name", :only_path => false},
+							:update => 'RecordsTable',
+							:before => "Element.show('spinner')",
+							:complete => "Element.hide('spinner')"%>
+						
+					</th>
+					<th>
+						<%= link_to_remote 'Label',
+							:url => {:action => "_record_items", :sort => "label.name", :only_path => false},
+							:update => 'RecordsTable',
+							:before => "Element.show('spinner')",
+							:complete => "Element.hide('spinner')"%>						
+					</th>
+					<th>Price</th>
+					<th>Buy</th>
+				</tr>
+				<% for record in @records %>
+					  <tr>
+						<td><%= link_to record.name, { :action => "details", :id => record.id }, :popup => true %></td>
+						<td><%=record.artist.name %></td>
+						<td><%=record.label.name %></td>
+						<td><%=get_price(record.price) %></td>
+						<td><%= form2.check_box 'item_'+record.id.to_s, {"checked", is_in_session? (record.id), "disabled", is_available_to_buy? (record)}, record.id.to_s, "off" %></td>
+					  </tr>
+				<% end %>
+			</table>
+			<p style="margin-top:20px; margin-left:75px; text-align:right;"><%= submit_tag "Add To Cart"  %><p>
+		</div>		
+	<% end %>
+<% end %>
+<p><%=@noRecordsMsg%></p>
+
+<div id="test"></div>

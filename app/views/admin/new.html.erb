@@ -1,0 +1,59 @@
+<h2>New/Edit record</h2>
+<%= error_messages_for 'record' %>
+<p>Enter a new record on this page and click "Add/Edit Record".
+<br>For new songs the name entered is assumed to be the first song on the single/ep/lp.
+But this can be edited and additional songs can be entered on the next screen
+</p>
+<% form_tag :action => 'New_submit', :record_id => @record do %>
+	<table cellpadding="5" style="margin-left: 90px;">
+		<tr>
+			<td><label for="record_artist_id">Artist</label></td>
+			<td><%=collection_select(:record, :artist_id, Artist.artists, :id, :name)%>
+		or <%= link_to 'Enter New Artist', :action => 'artist_new' %></td>		
+		</tr>	
+		<tr>
+			<td><label for="record_label_id">Record Label</label></td>
+			<td><%=collection_select(:record, :label_id, Label.labels, :id, :name)%>
+		or <%= link_to 'Enter New Label', :action => 'label_new' %></td>		
+		</tr>
+		<tr>
+			<td><label for="record_name">Record Name</label></td>
+			<td><%= text_field 'record', 'name'%></td>		
+		</tr>
+		<tr>
+			<td><label for="record_speed_id">Speed</label></td>
+			<td><%=collection_select(:record, :speed_id, Speed.speeds, :id, :name)%></td>		
+		</tr>
+		<tr>
+			<td><label for="record_condition">Record Condition</label></td>
+			<td><%= text_field 'record', 'condition'%></td>		
+		</tr>
+		<tr>
+			<td><label for="record_labelCondition">Label Condition</label></td>
+			<td><%= text_field 'record', 'labelCondition'%></td>		
+		</tr>
+		<tr>
+			<td><label for="record_year">Year</label></td>
+			<td><%= text_field 'record', 'year'%></td>		
+		</tr>
+		<tr>
+			<td><label for="record_description">Description</label></td>
+			<td><%= text_field 'record', 'description'%></td>		
+		</tr>
+		<tr>
+			<td><label for="record_description">Price</label></td>
+			<td><%= text_field 'record', 'price'%>&nbsp;(-9999 for auction)</td>		
+		</tr>
+		<tr>
+			<td><label for="record_isRecorded">Is Recorded</label></td>
+			<td><%= check_box("record", "isRecorded") %></td>		
+		</tr>
+		<tr>
+			<td><label for="record_speed_id">Record Status</label></td>
+			<td><%=collection_select(:record, :status_id, Status.statuses, :id, :name)%></td>		
+		</tr>
+		<tr>
+			<td colspan="2" align="center"> <%= submit_tag "Add/Edit Record" %></td>	
+		</tr>
+	</table>
+<% end %>

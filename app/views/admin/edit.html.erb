@@ -1,0 +1,14 @@
+<h1>Editing record</h1>
+
+<% form_tag :action => 'update', :id => @record do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<label for="record_name">Record Name</label>
+<%= text_field 'record', 'name'%></p>
+
+Temp=<%=@temp%>
+
+<%= link_to 'Show', :action => 'show', :id => @record %> |
+<%= link_to 'Back', :action => 'list' %>

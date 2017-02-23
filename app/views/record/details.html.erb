@@ -1,0 +1,55 @@
+<h2>Song Details</h2>
+<p>The table on the left shows all the details about this record.
+The table on the right shows all the songs associated with it.</p>
+
+
+<div style="float:left;	">
+	<table>	
+		<th colspan="2">Record Details</th>	
+		<tr>
+		  <td><b>Name:</b></td> 
+		  <td><%=@record.name%></td>
+		</tr>
+		<tr>
+		  <td><b>Vinyl Condition:</b></td> 
+		  <td><%=@record.condition%></td>
+		</tr>
+		<tr>
+		  <td><b>Label Condition:</b></td> 
+		  <td><%=@record.labelCondition%></td>
+		</tr>
+		<tr>
+		  <td><b>Year:</b></td> 
+		  <td><%=@record.year_display%></td>
+		</tr>
+		<tr>
+		  <td><b>Is Recorded:</b></td> 
+		  <td><%=@record.isRecorded_display%></td>
+		</tr>
+		<tr>
+		  <td><b>Has Been Sold:</b></td> 
+		  <td><%=@record.hasBeenSold_display%></td>
+		</tr>
+		<tr>
+		  <td><b>Description:</b></td> 
+		  <td><%=@record.description%></td>
+		</tr>
+		<tr>
+		  <td><b>Artist:</b></td> 
+		  <td><%=@record.artist.name%></td>
+		</tr>
+	</table>
+</div>
+
+<div class="songList">
+		<div class="songListTitle">Songs</div>
+		<ul style="margin-right: 20px;">
+			<%for song in @songs%>
+			<li>
+				<%=song.name%>
+			</li>
+			<%end%>
+		</ul>
+</div>
+<a href="javascript:window.close();">Close Window</a>
+

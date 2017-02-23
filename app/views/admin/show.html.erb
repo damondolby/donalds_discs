@@ -1,0 +1,62 @@
+<h2>Song Details</h2>
+<p>The table on the left shows all the details about this record.
+The table on the right shows all the songs associated with it.</p>
+
+
+<div style="float:left;	">
+	<table>	
+		<th colspan="2">Record Details</th>	
+		<tr>
+		  <td><b>Name:</b></td> 
+		  <td><%=@record.name%></td>
+		</tr>
+		<tr>
+		  <td><b>Vinyl Condition:</b></td> 
+		  <td><%=@record.condition%></td>
+		</tr>
+		<tr>
+		  <td><b>Label Condition:</b></td> 
+		  <td><%=@record.labelCondition%></td>
+		</tr>
+		<tr>
+		  <td><b>Year:</b></td> 
+		  <td><%=@record.year_display%></td>
+		</tr>
+		<tr>
+		  <td><b>Is Recorded:</b></td> 
+		  <td><%=@record.isRecorded_display%></td>
+		</tr>
+		<tr>
+		  <td><b>Record Status (e.g. available, sold, ordered etc.):</b></td> 
+		  <td><%=@record.status.name%></td>
+		</tr>
+		<tr>
+		  <td><b>Description:</b></td> 
+		  <td><%=@record.description%></td>
+		</tr>
+		<tr>
+		  <td><b>Artist:</b></td> 
+		  <td><%=@record.artist.name%></td>
+		</tr>
+		<tr>
+		  <td><b>Price:</b></td> 
+		  <td><%=get_price(@record.price)%></td>
+		</tr>
+		<tr>
+		  <td colspan="2" align="center"><%= link_to 'Edit Details', :action => 'new', :record_id => @record %> </p></td> 
+		</tr>
+	</table>
+</div>
+
+<div class="songList">
+		<div class="songListTitle">Songs</div>
+		<ul style="margin-right: 20px;">
+			<%for song in @songs%>
+			<li>
+				<%=song.name%>
+			</li>
+			<%end%>
+		</ul>
+		<%= link_to 'Add/Edit Songs', :action => 'songs', :record_id => @record %> 	
+</div>
+
